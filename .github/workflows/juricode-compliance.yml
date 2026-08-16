@@ -1,0 +1,13 @@
+name: JuriCode Compliance Gate
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  compliance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: FilipDolejsi/juricode-gate-action@main
+        with:
+          api-key: ${{ secrets.JURICODE_API_KEY }}
